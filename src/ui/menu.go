@@ -12,7 +12,7 @@ import (
 
 func Menu(p data.Person) data.Person {
 	for {
-		fmt.Println("1 Info\n 2 Sac\n 3 Combat\n 4 Marchand\n 5 Forgeron\n 0 Quitter")
+		fmt.Println("1 Info\n2Sac\n3 Combat\n4 Marchand\n5 Forgeron\n0 Quitter")
 		var x int
 		fmt.Scanln(&x)
 		if x == 0 {
