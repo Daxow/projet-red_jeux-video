@@ -9,15 +9,15 @@ import (
 func Shop(p data.Person) data.Person {
 	for {
 		fmt.Println("Marchand:")
-		fmt.Println("1 Potion de vie (3)")
-		fmt.Println("2 Potion de poison (6)")
-		fmt.Println("3 Livre de Sort : Boule de Feu (25)")
-		fmt.Println("4 Fourrure de Loup (4)")
-		fmt.Println("5 Peau de Troll (7)")
-		fmt.Println("6 Cuir de Sanglier (3)")
-		fmt.Println("7 Plume de Corbeau (1)")
-		fmt.Println("8 Augmentation d’inventaire (30)")
-		fmt.Println("0 Retour")
+		fmt.Println("1. Potion de vie (3)")
+		fmt.Println("2. Potion de poison (6)")
+		fmt.Println("3. Livre de Sort : Boule de Feu (25)")
+		fmt.Println("4. Fourrure de Loup (4)")
+		fmt.Println("5. Peau de Troll (7)")
+		fmt.Println("6. Cuir de Sanglier (3)")
+		fmt.Println("7. Plume de Corbeau (1)")
+		fmt.Println("8. Augmentation d’inventaire (30)")
+		fmt.Println("0. Retour")
 		var x int
 		fmt.Scanln(&x)
 		if x == 0 {
@@ -68,6 +68,6 @@ func Shop(p data.Person) data.Person {
 		}
 		p.Gold = p.Gold - cost
 		p = bag.AddBag(p, name)
-		fmt.Println("Achat:", name, "Or restant:", p.Gold)
+		fmt.Println("Achat:", name, "\nOr restant:", p.Gold)
 	}
 }

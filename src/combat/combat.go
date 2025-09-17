@@ -9,7 +9,7 @@ import (
 
 func MakeGoblin() data.Mob {
 	m := data.Mob{}
-	m.Name = "Gobelin d’entrainement"
+	m.Name = "Gobelin"
 	m.Hp = 40
 	m.Hpmax = 40
 	m.Atk = 5
@@ -21,7 +21,7 @@ func Fight(p data.Person) data.Person {
 	t := 1
 	for {
 		fmt.Println("--- Tour", t, "---")
-		fmt.Println("1 Attaque 2 Sac 0 Quit")
+		fmt.Println("1. Attaque\n2. Sac\n0. Quittter")
 		var x int
 		fmt.Scanln(&x)
 
@@ -30,7 +30,7 @@ func Fight(p data.Person) data.Person {
 		}
 		if x == 1 {
 			m.Hp = m.Hp - 5
-			fmt.Println("Vous tapez", m.Name, "reste", m.Hp)
+			fmt.Println("Vous attaquez", m.Name, "il lui reste", m.Hp, "/", m.Hpmax)
 		}
 		if x == 2 {
 			p = bag.UseBag(p)
@@ -41,7 +41,7 @@ func Fight(p data.Person) data.Person {
 		}
 
 		p.Hp = p.Hp - m.Atk
-		fmt.Println(m.Name, "tape", m.Atk, "reste", p.Hp)
+		fmt.Println(m.Name, "vous inflige", m.Atk, "il vous reste", p.Hp, "/", p.Hpmax)
 		p = player.Dead(p)
 		if p.Hp <= 0 {
 			break
