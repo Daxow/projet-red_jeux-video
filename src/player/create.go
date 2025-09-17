@@ -50,8 +50,8 @@ func Show(p data.Person) {
 	fmt.Println("Niveau:", p.Level)
 	fmt.Println("PV:", p.Hp, "/", p.Hpmax)
 	fmt.Println("Or:", p.Gold)
-	fmt.Println("Spells:", p.Spells)
-	fmt.Println("Equip:", p.Eq)
+	fmt.Println("Sorts:", p.Spells)
+	fmt.Println("Equipements:", p.Eq)
 }
 
 func Dead(p data.Person) data.Person {
