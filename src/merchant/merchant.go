@@ -68,6 +68,6 @@ func Shop(p data.Person) data.Person {
 		}
 		p.Gold = p.Gold - cost
 		p = bag.AddBag(p, name)
-		fmt.Println("Achat:", name, "Or restant:", p.Gold)
+		fmt.Println("Achat:", name, "\nOr restant:", p.Gold)
 	}
 }

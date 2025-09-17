@@ -10,7 +10,7 @@ import (
 func ShowBag(p data.Person) {
 	fmt.Println("Sac:")
 	for i := 0; i < len(p.Bag); i++ {
-		fmt.Println(i+1, p.Bag[i])
+		fmt.Printf("%d. %s\n", i+1, p.Bag[i])
 	}
 }
 
@@ -39,11 +39,11 @@ func RemoveBag(p data.Person, pos int) data.Person {
 
 func UseBag(p data.Person) data.Person {
 	if len(p.Bag) == 0 {
-		fmt.Println("Vide")
+		fmt.Println("Sac vide")
 		return p
 	}
 	ShowBag(p)
-	fmt.Println("Choix?")
+	fmt.Println("Votre choix?")
 	var x int
 	fmt.Scanln(&x)
 	if x <= 0 || x > len(p.Bag) {
