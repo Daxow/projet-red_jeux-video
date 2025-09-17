@@ -10,7 +10,7 @@ import (
 func ShowBag(p data.Person) {
 	fmt.Println("Sac:")
 	for i := 0; i < len(p.Bag); i++ {
-		fmt.Println(i+1, p.Bag[i])
+		fmt.Printf("%d. %s\n", i+1, p.Bag[i])
 	}
 }
 
