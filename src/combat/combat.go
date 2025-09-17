@@ -21,7 +21,7 @@ func Fight(p data.Person) data.Person {
 	t := 1
 	for {
 		fmt.Println("--- Tour", t, "---")
-		fmt.Println("1 Attaque 2 Sac 0 Quit")
+		fmt.Println("1. Attaque\n2. Sac\n0. Quittter")
 		var x int
 		fmt.Scanln(&x)
 
