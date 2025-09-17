@@ -24,7 +24,7 @@ func Menu(p data.Person) data.Person {
 			fmt.Scanln(&x)
 		}
 		if x == 2 {
-			p = bag.UseBag(p)
+			p = bag.UseBag(p, data.Mob{})
 			fmt.Println("Entrée pour continuer")
 			fmt.Scanln(&x)
 		}

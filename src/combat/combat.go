@@ -18,6 +18,8 @@ func MakeGoblin() data.Mob {
 
 func Fight(p data.Person) data.Person {
 	m := MakeGoblin()
+	fmt.Println(m.Hp)
+	fmt.Println(m.Hpmax)
 	t := 1
 	for {
 		fmt.Println("--- Tour", t, "---")
@@ -33,7 +35,7 @@ func Fight(p data.Person) data.Person {
 			fmt.Println("Vous attaquez", m.Name, "il lui reste", m.Hp, "/", m.Hpmax)
 		}
 		if x == 2 {
-			p = bag.UseBag(p)
+			p = bag.UseBag(p, m)
 		}
 		if m.Hp <= 0 {
 			fmt.Println("Victoire !")

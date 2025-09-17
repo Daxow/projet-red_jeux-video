@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+var m data.Mob
+
 func ShowBag(p data.Person) {
 	fmt.Println("Sac:")
 	for i := 0; i < len(p.Bag); i++ {
@@ -37,7 +39,7 @@ func RemoveBag(p data.Person, pos int) data.Person {
 	return p
 }
 
-func UseBag(p data.Person) data.Person {
+func UseBag(p data.Person, m data.Mob) data.Person {
 	if len(p.Bag) == 0 {
 		fmt.Println("Sac vide")
 		return p
@@ -67,10 +69,13 @@ func UseBag(p data.Person) data.Person {
 		fmt.Println("Vous utilisez Potion de poison")
 		for i := 0; i < 3; i++ {
 			time.Sleep(1 * time.Second)
-			p.Hp = p.Hp - 10
-			fmt.Println("Poison:", p.Hp, "/", p.Hpmax)
-			p = player.Dead(p)
-			if p.Hp <= 0 {
+			m.Hp -= 10
+			if m.Hp < 0 {
+				m.Hp = 0
+			}
+			fmt.Println("Poison:", m.Hp, "/", m.Hpmax)
+			if m.Hp <= 0 {
+				fmt.Println("Le monstre est mort !")
 				break
 			}
 		}
