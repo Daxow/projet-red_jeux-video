@@ -10,7 +10,8 @@ import (
 var m data.Mob
 
 func ShowBag(p data.Person) {
-	fmt.Println("Sac:")
+	fmt.Println("\nSac:")
+	fmt.Print("\n")
 	for i := 0; i < len(p.Bag); i++ {
 		fmt.Printf("%d. %s\n", i+1, p.Bag[i])
 	}
@@ -18,7 +19,7 @@ func ShowBag(p data.Person) {
 
 func AddBag(p data.Person, it string) data.Person {
 	if len(p.Bag) >= p.Size {
-		fmt.Println("Sac plein")
+		fmt.Println("\nSac plein")
 		return p
 	}
 	p.Bag = append(p.Bag, it)
@@ -41,11 +42,11 @@ func RemoveBag(p data.Person, pos int) data.Person {
 
 func UseBag(p data.Person, m data.Mob) data.Person {
 	if len(p.Bag) == 0 {
-		fmt.Println("Sac vide")
+		fmt.Println("\nSac vide")
 		return p
 	}
 	ShowBag(p)
-	fmt.Println("Votre choix?")
+	fmt.Println("\nVotre choix?")
 	var x int
 	fmt.Scanln(&x)
 	if x <= 0 || x > len(p.Bag) {
@@ -59,14 +60,14 @@ func UseBag(p data.Person, m data.Mob) data.Person {
 		if p.Hp > p.Hpmax {
 			p.Hp = p.Hpmax
 		}
-		fmt.Println("Vous utilisez Potion de vie")
+		fmt.Println("\nVous utilisez Potion de vie")
 		fmt.Println("PV:", p.Hp, "/", p.Hpmax)
 		p = RemoveBag(p, x-1)
 		return p
 	}
 
 	if it == "Potion de poison" {
-		fmt.Println("Vous utilisez Potion de poison")
+		fmt.Println("\nVous utilisez Potion de poison")
 		for i := 0; i < 3; i++ {
 			time.Sleep(1 * time.Second)
 			m.Hp -= 10
