@@ -12,7 +12,19 @@ import (
 
 func Menu(p data.Person) data.Person {
 	for {
-		fmt.Println("1. Info\n2. Sac\n3. Combat\n4. Marchand\n5. Forgeron\n0. Quitter")
+		fmt.Print(`
+┌───────────────────────────────┐
+│             MENU              │
+├───────────────────────────────┤
+│  [1] Info                     │
+│  [2] Sac                      │
+│  [3] Combat                   │
+│  [4] Marchand                 │
+│  [5] Forgeron                 │
+│  [0] Quitter                  │
+└───────────────────────────────┘
+	Entrez votre choix :
+`)
 		var x int
 		fmt.Scanln(&x)
 		if x == 0 {
@@ -24,13 +36,13 @@ func Menu(p data.Person) data.Person {
 			fmt.Scanln(&x)
 		}
 		if x == 2 {
-			p = bag.UseBag(p)
-			fmt.Println("Entrée pour continuer")
+			p = bag.UseBag(p, data.Mob{})
+			fmt.Println("\nEntrée pour continuer")
 			fmt.Scanln(&x)
 		}
 		if x == 3 {
 			p = combat.Fight(p)
-			fmt.Println("Entrée pour continuer")
+			fmt.Println("\nEntrée pour continuer")
 			fmt.Scanln(&x)
 		}
 		if x == 4 {

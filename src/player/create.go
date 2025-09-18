@@ -16,18 +16,36 @@ func CreateCharacter() data.Person {
 		}
 	}
 	for {
-		fmt.Println("Classe ? Humain / Elfe / Nain")
+		fmt.Println(`
+┌───────────────────────────────┐
+│    CHOISISSEZ VOTRE CLASSE    │
+├───────────────────────────────┤
+│  [1] Humain                   │
+│      ───────                  │
+│                               │
+│  [2] Elfe                     │
+│      ───────                  │
+│                               │
+│  [3] Nain                     │
+│      ───────                  │
+└───────────────────────────────┘
+	Entrez votre choix :`)
 		fmt.Scanln(&c)
-		if c == "Humain" || c == "Elfe" || c == "Nain" {
+		if c == "1" || c == "2" || c == "3" {
 			break
 		}
 	}
 	pv := 100
-	if c == "Elfe" {
-		pv = 80
+	if c == "1" {
+		c = "Humain"
 	}
-	if c == "Nain" {
+	if c == "2" {
+		pv = 80
+		c = "Elfe"
+	}
+	if c == "3" {
 		pv = 120
+		c = "Nain"
 	}
 
 	p := data.Person{}
@@ -45,13 +63,14 @@ func CreateCharacter() data.Person {
 }
 
 func Show(p data.Person) {
-	fmt.Println("Nom:", p.Name)
+	fmt.Println("\nNom:", p.Name)
 	fmt.Println("Classe:", p.Class)
 	fmt.Println("Niveau:", p.Level)
 	fmt.Println("PV:", p.Hp, "/", p.Hpmax)
 	fmt.Println("Or:", p.Gold)
 	fmt.Println("Sorts:", p.Spells)
 	fmt.Println("Equipements:", p.Eq)
+	fmt.Print ("\n")
 }
 
 func Dead(p data.Person) data.Person {

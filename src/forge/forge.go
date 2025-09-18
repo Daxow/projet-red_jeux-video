@@ -55,7 +55,8 @@ func craft(p data.Person, need []string, item string) data.Person {
 
 func Smith(p data.Person) data.Person {
 	for {
-		fmt.Println("Forgeron (5 or):")
+		fmt.Println("\nForgeron (5 or):")
+		fmt.Print("\n")
 		fmt.Println("1. Chapeau de l’aventurier (1 Plume de Corbeau, 1 Cuir de Sanglier)")
 		fmt.Println("2. Tunique de l’aventurier (2 Fourrure de Loup, 1 Peau de Troll)")
 		fmt.Println("3. Bottes de l’aventurier (1 Fourrure de Loup, 1 Cuir de Sanglier)")

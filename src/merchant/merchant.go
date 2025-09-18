@@ -8,7 +8,8 @@ import (
 
 func Shop(p data.Person) data.Person {
 	for {
-		fmt.Println("Marchand:")
+		fmt.Println("\nMarchand:")
+		fmt.Print ("\n")
 		fmt.Println("1. Potion de vie (3)")
 		fmt.Println("2. Potion de poison (6)")
 		fmt.Println("3. Livre de Sort : Boule de Feu (25)")
