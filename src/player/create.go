@@ -57,7 +57,7 @@ func CreateCharacter() data.Person {
 	p.Gold = 100
 	p.Spells = []string{"Coup de poing"}
 	p.Bag = []string{"Potion de vie", "Potion de vie"}
-	p.Size = 5
+	p.Size = 10
 	p.Up = 0
 	return p
 }
@@ -70,7 +70,7 @@ func Show(p data.Person) {
 	fmt.Println("Or:", p.Gold)
 	fmt.Println("Sorts:", p.Spells)
 	fmt.Println("Equipements:", p.Eq)
-	fmt.Print ("\n")
+	fmt.Print("\n")
 }
 
 func Dead(p data.Person) data.Person {
