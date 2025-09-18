@@ -57,7 +57,7 @@ func CreateCharacter() data.Person {
 	p.Gold = 100
 	p.Spells = []string{"Coup de poing"}
 	p.Bag = []string{"Potion de vie", "Potion de vie"}
-	p.Size = 5
+	p.Size = 10
 	p.Up = 0
 	return p
 }
