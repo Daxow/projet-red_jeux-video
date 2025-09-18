@@ -20,8 +20,3 @@ Exécution
 Toujours depuis `src` :
 
 go run .
-
-
-ou depuis la racine :
-
-go run ./src
