@@ -70,7 +70,7 @@ func Show(p data.Person) {
 	fmt.Println("Or:", p.Gold)
 	fmt.Println("Sorts:", p.Spells)
 	fmt.Println("Equipements:", p.Eq)
-	fmt.Print ("\n")
+	fmt.Print("\n")
 }
 
 func Dead(p data.Person) data.Person {

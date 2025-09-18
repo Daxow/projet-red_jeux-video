@@ -5,20 +5,18 @@ On peut créer un personnage, gérer un inventaire, acheter au marchand, fabriqu
 
 Installation
 
-    Aller dans le dossier src
-
+1. Aller dans le dossier `src`
 
 cd src
 
 
-    Initialiser le module Go (si besoin)
-
+2. Initialiser le module Go (si besoin)
 
 go mod tidy
 
 
 Exécution
 
-Toujours depuis src :
+Toujours depuis `src` :
 
 go run .
