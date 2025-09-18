@@ -39,7 +39,6 @@ func Fight(p data.Person) data.Person {
 			fmt.Println("Victoire !")
 			break
 		}
-
 		p.Hp = p.Hp - m.Atk
 		fmt.Printf("%s vous inflige %d, il vous reste %d / %d\n", m.Name, m.Atk, p.Hp, p.Hpmax)
 		p = player.Dead(p)
